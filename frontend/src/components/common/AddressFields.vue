@@ -12,10 +12,11 @@
             placeholder="00000-000"
             :required="required"
             class="block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand"
+            data-cy="address-zip"
             @input="onZipInput"
             @blur="() => lookup()"
           />
-          <button type="button" class="btn-ghost shrink-0 px-3" :disabled="looking" @click="() => lookup()">
+          <button type="button" class="btn-ghost shrink-0 px-3" data-cy="address-lookup" :disabled="looking" @click="() => lookup()">
             {{ looking ? '...' : 'Buscar' }}
           </button>
         </div>
@@ -28,6 +29,7 @@
           type="text"
           :required="required"
           class="mt-1 block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand"
+          data-cy="address-street"
           @input="patch({ street: ($event.target as HTMLInputElement).value })"
         />
       </div>
@@ -40,6 +42,7 @@
           type="text"
           :required="required"
           class="mt-1 block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand"
+          data-cy="address-number"
           @input="patch({ number: ($event.target as HTMLInputElement).value })"
         />
       </div>
@@ -61,6 +64,7 @@
           type="text"
           :required="required"
           class="mt-1 block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand"
+          data-cy="address-neighborhood"
           @input="patch({ neighborhood: ($event.target as HTMLInputElement).value })"
         />
       </div>
@@ -71,6 +75,7 @@
           type="text"
           :required="required"
           class="mt-1 block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand"
+          data-cy="address-city"
           @input="patch({ city: ($event.target as HTMLInputElement).value })"
         />
       </div>
@@ -82,6 +87,7 @@
           maxlength="2"
           :required="required"
           class="mt-1 block w-full uppercase rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand"
+          data-cy="address-state"
           @input="patch({ state: ($event.target as HTMLInputElement).value.toUpperCase() })"
         />
       </div>

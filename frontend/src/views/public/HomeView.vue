@@ -14,7 +14,7 @@
           Processadores, placas de vídeo, memória e HD com estoque real. Também limpamos, formatamos, diagnosticamos e montamos o seu setup.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <RouterLink to="/catalog" class="btn-primary">Ver peças</RouterLink>
+          <RouterLink to="/catalog" class="btn-primary" data-cy="cta-catalog">Ver peças</RouterLink>
           <RouterLink to="/catalog?category=servicos" class="btn-ghost !border-slate-600 !bg-white/5 !text-white hover:!bg-white/10">Agendar assistência</RouterLink>
         </div>
         <dl class="mt-12 grid grid-cols-3 max-w-lg gap-6 text-sm">

@@ -35,7 +35,7 @@
         <p class="mt-2 text-xs text-slate-400">Frete calculado no checkout (R$ 15 para peças · serviços sem frete).</p>
         <div class="mt-6 flex gap-3">
           <RouterLink to="/catalog" class="btn-ghost flex-1">Continuar comprando</RouterLink>
-          <RouterLink to="/checkout" class="btn-primary flex-1">Finalizar</RouterLink>
+          <RouterLink to="/checkout" class="btn-primary flex-1" data-cy="cart-checkout">Finalizar</RouterLink>
         </div>
       </div>
     </div>

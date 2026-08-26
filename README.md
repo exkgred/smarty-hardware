@@ -51,7 +51,19 @@ Cartão de teste no checkout: `4242 4242 4242 4242`, validade futura, CVV `123`.
 
 ## Testes
 
+API (PHPUnit):
+
 ```bash
 cd backend
 php artisan test
 ```
+
+Front (Cypress E2E — API e Vite precisam estar no ar):
+
+```bash
+cd frontend
+npm run cypress:open   # modo interativo
+npm run cypress:run    # headless
+```
+
+Cobre home, catálogo, login, painel admin e checkout com CEP/PIX.

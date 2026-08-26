@@ -23,6 +23,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         EloquentUserModel::query()->create([
+            'name' => 'Cliente Smarty',
+            'email' => 'cliente@marketplace.test',
+            'password' => Hash::make('password'),
+            'role' => 'customer',
+        ]);
+
+        EloquentUserModel::query()->create([
             'name' => 'Cliente balcão',
             'email' => 'balcao@smartyhardware.test',
             'password' => Hash::make('password'),

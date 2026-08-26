@@ -1,5 +1,5 @@
 <template>
-  <article class="group card-surface flex flex-col overflow-hidden hover:shadow-md hover:border-brand/30 transition">
+  <article class="group card-surface flex flex-col overflow-hidden hover:shadow-md hover:border-brand/30 transition" data-cy="product-card">
     <RouterLink :to="{ name: 'product-detail', params: { slug: product.slug } }" class="relative h-52 bg-slate-100 overflow-hidden">
       <img
         :src="product.image_url || '/images/products/cpu-ryzen.jpg'"
@@ -28,6 +28,7 @@
         <button
           @click="addToCart"
           :disabled="product.stock_quantity === 0"
+          data-cy="add-to-cart"
           class="rounded-lg bg-ink px-3 py-2 text-xs font-semibold text-white hover:bg-slate-800 disabled:bg-slate-300"
         >
           {{ service ? 'Agendar' : 'Adicionar' }}

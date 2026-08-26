@@ -16,7 +16,7 @@
     <!-- Content -->
     <div class="flex-1 flex flex-col overflow-hidden">
       <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6">
-        <h1 class="text-lg font-semibold text-gray-900">Painel de Administração</h1>
+        <h1 class="text-lg font-semibold text-gray-900" data-cy="admin-header">Painel de Administração</h1>
         <div class="flex items-center gap-4">
           <span class="text-sm text-gray-600">Olá, {{ authStore.user?.name }}</span>
           <button @click="logout" class="text-sm text-red-600 hover:text-red-800 font-medium">Sair</button>

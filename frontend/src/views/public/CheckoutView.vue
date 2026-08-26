@@ -1,14 +1,14 @@
 <template>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h1 class="text-3xl font-bold text-ink mb-8">Checkout</h1>
-    <form @submit.prevent="submitOrder" class="space-y-8 card-surface p-6">
+    <form @submit.prevent="submitOrder" class="space-y-8 card-surface p-6" data-cy="checkout-form">
       <div>
         <h2 class="text-lg font-semibold text-ink">{{ servicesOnly ? 'Dados para o agendamento' : 'Entrega' }}</h2>
         <div class="mt-4 space-y-4">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-slate-700">Nome</label>
-              <input type="text" v-model="form.name" required class="mt-1 block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand" />
+              <input type="text" v-model="form.name" required data-cy="checkout-name" class="mt-1 block w-full rounded-lg ring-1 ring-slate-200 py-2 px-3 text-sm focus:ring-brand" />
             </div>
             <div>
               <label class="block text-sm font-medium text-slate-700">Telefone</label>
@@ -31,6 +31,7 @@
             :key="method.value"
             class="flex cursor-pointer items-start gap-3 rounded-xl border p-3 text-sm"
             :class="form.payment_method === method.value ? 'border-brand bg-brand-50' : 'border-slate-200'"
+            :data-cy="`pay-${method.value}`"
           >
             <input v-model="form.payment_method" type="radio" :value="method.value" class="mt-1" />
             <span>
@@ -81,7 +82,7 @@
         </div>
       </div>
       <div class="flex justify-end">
-        <button type="submit" :disabled="ordersStore.checkoutLoading || cartStore.isEmpty" class="btn-primary px-8 py-3">
+        <button type="submit" :disabled="ordersStore.checkoutLoading || cartStore.isEmpty" data-cy="checkout-submit" class="btn-primary px-8 py-3">
           {{ ordersStore.checkoutLoading ? 'Processando...' : 'Confirmar pedido' }}
         </button>
       </div>

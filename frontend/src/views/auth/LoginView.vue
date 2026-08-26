@@ -8,13 +8,13 @@
       <form class="space-y-5" @submit.prevent="onSubmit">
         <div>
           <label class="block text-sm font-medium text-slate-700">Email</label>
-          <input id="email" v-model="form.email" type="email" required class="mt-1 block w-full rounded-lg py-2 px-3 text-sm ring-1 ring-slate-200 focus:ring-2 focus:ring-brand" />
+          <input id="email" v-model="form.email" type="email" required data-cy="email" class="mt-1 block w-full rounded-lg py-2 px-3 text-sm ring-1 ring-slate-200 focus:ring-2 focus:ring-brand" />
         </div>
         <div>
           <label class="block text-sm font-medium text-slate-700">Senha</label>
-          <input id="password" v-model="form.password" type="password" required class="mt-1 block w-full rounded-lg py-2 px-3 text-sm ring-1 ring-slate-200 focus:ring-2 focus:ring-brand" />
+          <input id="password" v-model="form.password" type="password" required data-cy="password" class="mt-1 block w-full rounded-lg py-2 px-3 text-sm ring-1 ring-slate-200 focus:ring-2 focus:ring-brand" />
         </div>
-        <button type="submit" :disabled="authStore.isLoading" class="btn-primary w-full">
+        <button type="submit" :disabled="authStore.isLoading" data-cy="login-submit" class="btn-primary w-full">
           {{ authStore.isLoading ? 'Entrando...' : 'Entrar' }}
         </button>
       </form>

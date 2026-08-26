@@ -15,7 +15,7 @@
         </RouterLink>
 
         <nav class="flex items-center gap-4 text-sm font-medium text-slate-300">
-          <RouterLink to="/catalog" class="hover:text-white">Peças</RouterLink>
+          <RouterLink to="/catalog" class="hover:text-white" data-cy="nav-catalog">Peças</RouterLink>
           <RouterLink to="/catalog?category=servicos" class="hover:text-white">Assistência</RouterLink>
         </nav>
 
@@ -25,12 +25,13 @@
             type="search"
             placeholder="Buscar Ryzen, RTX, SSD, limpeza..."
             class="w-full rounded-l-lg border-0 bg-slate-800/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 ring-1 ring-slate-700 focus:ring-2 focus:ring-brand"
+            data-cy="nav-search"
           />
-          <button type="submit" class="rounded-r-lg bg-brand px-3 text-ink font-semibold text-sm hover:bg-brand-dark">Buscar</button>
+          <button type="submit" class="rounded-r-lg bg-brand px-3 text-ink font-semibold text-sm hover:bg-brand-dark" data-cy="nav-search-submit">Buscar</button>
         </form>
 
         <div class="flex items-center gap-3 ml-auto sm:ml-0">
-          <RouterLink to="/cart" class="relative text-slate-300 hover:text-white">
+          <RouterLink to="/cart" class="relative text-slate-300 hover:text-white" data-cy="nav-cart">
             <span class="sr-only">Carrinho</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -47,6 +48,7 @@
                 class="flex items-center gap-1 px-2 py-2 text-sm font-medium text-slate-200 hover:text-white"
                 aria-haspopup="true"
                 :aria-expanded="menuOpen"
+                data-cy="nav-user"
                 @click="toggleMenu"
               >
                 {{ authStore.user?.name }}
@@ -58,14 +60,14 @@
                 <div class="rounded-lg border border-slate-700 bg-ink-800 py-1 shadow-xl">
                   <RouterLink to="/account" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-800" @click="closeMenu">Minha conta</RouterLink>
                   <RouterLink to="/my-orders" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-800" @click="closeMenu">Meus pedidos</RouterLink>
-                  <RouterLink v-if="authStore.isAdmin" to="/admin" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-800" @click="closeMenu">Painel admin</RouterLink>
+                  <RouterLink v-if="authStore.isAdmin" to="/admin" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-800" data-cy="nav-admin" @click="closeMenu">Painel admin</RouterLink>
                   <button type="button" class="block w-full text-left px-4 py-2 text-sm text-slate-200 hover:bg-slate-800" @click="logout">Sair</button>
                 </div>
               </div>
             </div>
           </template>
           <template v-else>
-            <RouterLink to="/login" class="text-sm text-slate-300 hover:text-white">Entrar</RouterLink>
+            <RouterLink to="/login" class="text-sm text-slate-300 hover:text-white" data-cy="nav-login">Entrar</RouterLink>
             <RouterLink to="/register" class="hidden sm:inline-flex rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-ink hover:bg-brand-dark">Criar conta</RouterLink>
           </template>
         </div>
