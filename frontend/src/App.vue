@@ -1,5 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col">
+    <DemoBanner v-if="isDemo" />
     <AppNavbar v-if="!isAdminRoute" />
     <main class="flex-grow">
       <RouterView />
@@ -18,6 +19,8 @@ import AppNavbar from '@/components/common/AppNavbar.vue'
 import AppFooter from '@/components/common/AppFooter.vue'
 import ChatWidget from '@/components/chat/ChatWidget.vue'
 import NotificationToast from '@/components/common/NotificationToast.vue'
+import DemoBanner from '@/components/common/DemoBanner.vue'
+import { isDemo } from '@/services/demo-mode'
 
 const authStore = useAuthStore()
 const route = useRoute()

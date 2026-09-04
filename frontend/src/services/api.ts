@@ -1,9 +1,12 @@
 import axios from 'axios'
 import type { Address, CheckoutPayload } from '@/types'
+import { isDemo } from './demo-mode'
+import { demoAdapter } from './mock-adapter'
 
 const api = axios.create({
   baseURL: '/api',
-  headers: { Accept: 'application/json' }
+  headers: { Accept: 'application/json' },
+  ...(isDemo ? { adapter: demoAdapter } : {})
 })
 
 api.interceptors.request.use(config => {

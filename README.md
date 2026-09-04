@@ -49,6 +49,17 @@ O Vite já encaminha `/api` para o Laravel.
 
 Cartão de teste no checkout: `4242 4242 4242 4242`, validade futura, CVV `123`.
 
+## Demo na Vercel (estática)
+
+O frontend sobe sozinho, sem Laravel/MySQL. Com `VITE_DEMO=true` a API é mockada no browser.
+
+1. No [Vercel](https://vercel.com/new) importe `exkgred/smarty-hardware`
+2. **Root Directory:** `frontend`
+3. Framework: Vite · Build: `npx vite build` · Output: `dist`
+4. Variável: `VITE_DEMO=true`
+
+Ou, na pasta `frontend/`: `npx vercel --prod`.
+
 ## Testes
 
 API (PHPUnit):

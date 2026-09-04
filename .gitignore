@@ -12,6 +12,7 @@ backend/public/storage
 .env
 .env.*
 !.env.example
+!frontend/.env.production
 backend/.env
 backend/.env.backup
 backend/.env.production
