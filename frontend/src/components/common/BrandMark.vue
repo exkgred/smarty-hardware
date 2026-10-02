@@ -10,16 +10,23 @@ withDefaults(
 
 <template>
   <span class="inline-flex items-center gap-2">
-    <svg :width="size" :height="size" viewBox="0 0 32 32" aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="#0b1220" />
+    <svg
+      :width="size"
+      :height="size"
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      class="shrink-0"
+      :style="{ width: `${size}px`, height: `${size}px` }"
+    >
+      <rect width="32" height="32" rx="8" fill="#06b6d4" />
       <path
         d="M10.2 11.2h11.6v9.6H10.2z"
         fill="none"
-        stroke="#22d3ee"
+        stroke="white"
         stroke-width="1.6"
       />
-      <path d="M12.2 11.2V9.6h7.6v1.6M12.2 20.8v1.6h7.6v-1.6" stroke="#22d3ee" stroke-width="1.6" />
-      <path d="M16 8.8 12.6 16h3.1l-1.1 6.2L20 13.6h-3.2L16 8.8Z" fill="#06b6d4" />
+      <path d="M12.2 11.2V9.6h7.6v1.6M12.2 20.8v1.6h7.6v-1.6" stroke="white" stroke-width="1.6" />
+      <path d="M16 8.8 12.6 16h3.1l-1.1 6.2L20 13.6h-3.2L16 8.8Z" fill="#0b1220" />
     </svg>
     <span class="leading-tight">
       <span
