@@ -2,16 +2,8 @@
   <header class="sticky top-0 z-30 border-b border-slate-800/60 bg-ink/95 backdrop-blur">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center gap-6">
-        <RouterLink to="/" class="flex items-center gap-2 shrink-0">
-          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
-            <svg class="h-5 w-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </span>
-          <span class="leading-tight">
-            <span class="block text-sm font-bold tracking-wide text-white">SMARTY</span>
-            <span class="block text-[10px] uppercase tracking-[0.2em] text-brand-200">Hardware</span>
-          </span>
+        <RouterLink to="/" class="flex items-center shrink-0">
+          <BrandMark :size="36" />
         </RouterLink>
 
         <nav class="flex items-center gap-4 text-sm font-medium text-slate-300">
@@ -79,6 +71,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import BrandMark from '@/components/common/BrandMark.vue'
 import { useAuthStore } from '@/stores/auth'
 import { useCartStore } from '@/stores/cart'
 

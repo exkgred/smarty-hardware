@@ -1,7 +1,9 @@
 <template>
   <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm text-center">
-      <p class="text-xs font-bold tracking-[0.25em] text-brand-700">SMARTY HARDWARE</p>
+      <div class="flex justify-center">
+        <BrandMark :size="40" tone="onLight" />
+      </div>
       <h2 class="mt-3 text-2xl font-bold text-ink">Criar conta</h2>
     </div>
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-sm card-surface p-6">
@@ -35,6 +37,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import BrandMark from '@/components/common/BrandMark.vue'
 import { useAuthStore } from '@/stores/auth'
 import { useNotification } from '@/composables/useNotification'
 

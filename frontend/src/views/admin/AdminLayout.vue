@@ -2,7 +2,9 @@
   <div class="min-h-screen bg-gray-100 flex">
     <!-- Sidebar -->
     <div class="w-64 bg-gray-900 text-white flex flex-col">
-      <div class="h-16 flex items-center px-4 font-bold text-sm tracking-wide border-b border-slate-800">SMARTY ADMIN</div>
+      <div class="h-16 flex items-center px-4 border-b border-slate-800">
+        <BrandMark :size="32" />
+      </div>
       <nav class="flex-1 px-2 py-4 space-y-1">
         <RouterLink to="/admin" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800" exact-active-class="bg-gray-800">Dashboard</RouterLink>
         <RouterLink to="/admin/products" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800" exact-active-class="bg-gray-800">Produtos</RouterLink>
@@ -30,6 +32,7 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import BrandMark from '@/components/common/BrandMark.vue'
 import { useAuthStore } from '@/stores/auth'
 
 const authStore = useAuthStore()
